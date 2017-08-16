@@ -1,0 +1,22 @@
+{
+  "name": "ng-group-by",
+  "description": "an angularJS group-by filter, that supports deep document grouping",
+  "main": "./dist/ng-group-by.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/phaldiya/ng-group-by",
+  "authors": [
+    "Pradeep K Haldiya <pradeep.haldiya@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "ng",
+    "AngularJS",
+    "filters",
+    "Filters",
+    "Array",
+    "array"
+  ],
+  "license": "MIT"
+}
