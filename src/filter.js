@@ -1,17 +1,21 @@
 'use strict';
 module.exports = /*@ngInject*/
-  function(value, field) {
-   if (!field || !value) { return []; }
+  function (value, field) {
+    if (!field || !value) {
+      return [];
+    }
 
-    const filtered = [];
+    var filtered = [];
 
     try {
-      let getValue = function(obj, field) {
-        let array = field.split(".");
-        let value;
+      var getValue = function getValue(obj, field) {
+        var array = field.split(".");
+        var value = void 0;
         if (array && array.length > 1) {
-          let deepObject = Object.assign({}, obj);
-          array.forEach(item => deepObject = deepObject[item]);
+          var deepObject = Object.assign({}, obj);
+          array.forEach(function (item) {
+            return deepObject = deepObject[item];
+          });
           value = deepObject;
         } else {
           value = obj[field];
@@ -19,7 +23,7 @@ module.exports = /*@ngInject*/
 
         return value;
       };
-      const groupedObj = value.reduce((prev, cur)=> {
+      var groupedObj = value.reduce(function (prev, cur) {
         if (!prev[getValue(cur, field)]) {
           prev[getValue(cur, field)] = [cur];
         } else {
@@ -28,8 +32,9 @@ module.exports = /*@ngInject*/
         return prev;
       }, {});
 
-      return Object.keys(groupedObj).map(key => ({ key: key, data: groupedObj[key] }));
-
+      return Object.keys(groupedObj).map(function (key) {
+        return { key: key, data: groupedObj[key] };
+      });
     } catch (err) {
       console.error(err);
       throw err;

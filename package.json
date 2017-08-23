@@ -2,13 +2,14 @@
   "name": "ng-group-by",
   "description": "an angularJS group-by filter, that supports deep document grouping",
   "main": "./index.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "authors": [
     "Pradeep K Haldiya <pradeep.haldiya@gmail.com>"
   ],
   "keywords": [
     "ng",
     "AngularJS",
+    "filter",
     "filters",
     "Filters",
     "groupBy",
@@ -49,7 +50,6 @@
     "path": "^0.12.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babelify": "^7.3.0"
+    "babel-preset-es2015": "^6.24.1"
   }
 }
