@@ -45,7 +45,7 @@ var ctrl.teamPlayers = [
      {name: 'Michael Bradley', team: 'Toronto FC'}
    ];
 
-// groupBy filter will transform the date into Array of Group Objects. i.e. {key: <GROUP_BY_VALUE>, date: <ARRAY OF OBJECTS>}
+// groupBy filter will transform the data into Array of Group Objects. i.e. {key: <GROUP_BY_VALUE>, date: <ARRAY OF OBJECTS>}
 /*[
         {
           "key": "Toronto FC",

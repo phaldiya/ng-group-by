@@ -54,7 +54,8 @@ gulp.task('build', ['lint', 'spec'], function(done) {
       detectGlobals: false,
       basedir: './src/',
       debug: false,
-      bundleExternal: true
+      bundleExternal: true,
+      transform: [['babelify', { presets: ['es2015'] }]]
     })
       .bundle()
       .pipe(source('ng-group-by.js'))
@@ -62,7 +63,7 @@ gulp.task('build', ['lint', 'spec'], function(done) {
       .on('error', plugins.util.log.bind(plugins.util, 'Browserify Error'))
       .pipe(plugins.header(header, {pkg: pkg}))
       .pipe(gulp.dest('dist/'))
-      .pipe(plugins.uglifyEs.default())
+      .pipe(plugins.uglifyEs.default({ecma: 5, ie8: true}))
       .on('error', plugins.util.log.bind(plugins.util, 'Uglify ES Error'))
       .pipe(plugins.rename({extname: '.min.js'}))
       .pipe(gulp.dest('dist/'));
